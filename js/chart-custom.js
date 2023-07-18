@@ -2805,7 +2805,7 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 				color: "#17a2b8"
 			}]
 		}).render()
-	}), jQuery("#apex-basic").length) {
+	}), jQuery("#reporter-apex-basic").length) {
 	options = {
 		chart: {
 			height: 350,
@@ -2816,7 +2816,7 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 		},
 		colors: ["#1e3d73"],
 		series: [{
-			name: "Desktops",
+			name: "News Count",
 			data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
 		}],
 		dataLabels: {
@@ -2826,7 +2826,7 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 			curve: "straight"
 		},
 		title: {
-			text: "Product Trends by Month",
+			text: "News Trends by Month",
 			align: "left"
 		},
 		grid: {
@@ -2839,7 +2839,7 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 			categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
 		}
 	};
-	(chart = new ApexCharts(document.querySelector("#apex-basic"), options)).render()
+	(chart = new ApexCharts(document.querySelector("#reporter-apex-basic"), options)).render()
 }
 if (jQuery("#apex-line-area").length) {
 	options = {
@@ -2873,7 +2873,7 @@ if (jQuery("#apex-line-area").length) {
 	};
 	(chart = new ApexCharts(document.querySelector("#apex-line-area"), options)).render()
 }
-if (jQuery("#apex-bar").length) {
+if (jQuery("#proof-apex-bar").length) {
 	options = {
 		chart: {
 			height: 350,
@@ -2885,17 +2885,24 @@ if (jQuery("#apex-bar").length) {
 			}
 		},
 		dataLabels: {
-			enabled: !1
+			enabled: false
 		},
 		colors: ["#1e3d73"],
 		series: [{
 			data: [470, 540, 580, 690, 1100, 1200, 1380]
 		}],
 		xaxis: {
-			categories: ["Netherlands", "Italy", "France", "Japan", "United States", "China", "Germany"]
+			categories: ["PF1", "PF2", "Pf3", "PF4", "PF5", "PF6", "PF7"]
+		},
+		tooltip: {
+			y: {
+				formatter: function(value) {
+					return "News Count: " + value;
+				}
+			}
 		}
 	};
-	(chart = new ApexCharts(document.querySelector("#apex-bar"), options)).render()
+	(chart = new ApexCharts(document.querySelector("#proof-apex-bar"), options)).render()
 }
 if (jQuery("#apex-column").length) {
 	options = {
@@ -5108,21 +5115,45 @@ if (jQuery("#am-simple-chart").length && am4core.ready(function() {
 		var e = am4core.create("wordcount-chart", am4charts.PieChart3D);
 		e.hiddenState.properties.opacity = 0, e.legend = new am4charts.Legend, e.data = [{
 			country: "Bishal Bangla",
-			litres: 501.9
+			litres: 501
 		}, {
 			country: "Business",
-			litres: 165.8
+			litres: 165
 		}, {
 			country: "Sports",
-			litres: 139.9
+			litres: 139
 		}, {
 			country: "Binodon",
-			litres: 128.3
+			litres: 128
 		}, {
 			country: "Porasona",
 			litres: 99
 		}, {
 			country: "Others",
+			litres: 60
+		}];
+		var t = e.series.push(new am4charts.PieSeries3D);
+		t.colors.list = [am4core.color("#1e3d73"), am4core.color("#fbc647"), am4core.color("#fe517e"), am4core.color("#6ce6f4"), am4core.color("#99f6ca"), am4core.color("#c8c8c8")], t.dataFields.value = "litres", t.dataFields.category = "country"
+	}), jQuery("#pagecount-chart").length && am4core.ready(function() {
+		am4core.useTheme(am4themes_animated);
+		var e = am4core.create("pagecount-chart", am4charts.PieChart3D);
+		e.hiddenState.properties.opacity = 0, e.legend = new am4charts.Legend, e.data = [{
+			country: "User-1",
+			litres: 501
+		}, {
+			country: "User-2",
+			litres: 165
+		}, {
+			country: "User-3",
+			litres: 139
+		}, {
+			country: "User-4",
+			litres: 128
+		}, {
+			country: "User-5",
+			litres: 99
+		}, {
+			country: "User-6",
 			litres: 60
 		}];
 		var t = e.series.push(new am4charts.PieSeries3D);
