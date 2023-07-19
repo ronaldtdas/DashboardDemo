@@ -2805,7 +2805,7 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 				color: "#17a2b8"
 			}]
 		}).render()
-	}), jQuery("#reporter-apex-basic").length) {
+	}), jQuery("#advvol-apex-basic").length) {
 	options = {
 		chart: {
 			height: 350,
@@ -2816,8 +2816,8 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 		},
 		colors: ["#1e3d73"],
 		series: [{
-			name: "News Count",
-			data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+			name: "Column inch",
+			data: [10, 41, 100, 51, 49, 62, 69, 91, 148]
 		}],
 		dataLabels: {
 			enabled: !1
@@ -2826,7 +2826,7 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 			curve: "straight"
 		},
 		title: {
-			text: "News Trends by Month",
+			text: "Volume Trends by Day",
 			align: "left"
 		},
 		grid: {
@@ -2836,10 +2836,10 @@ if (jQuery("#chartdiv").length && jQuery(document).ready(function() {
 			}
 		},
 		xaxis: {
-			categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
+			categories: ["18/01/23", "19/01/23", "20/01/23", "21/01/23", "22/01/23", "23/01/23", "24/01/23", "25/01/23", "26/01/23"]
 		}
 	};
-	(chart = new ApexCharts(document.querySelector("#reporter-apex-basic"), options)).render()
+	(chart = new ApexCharts(document.querySelector("#advvol-apex-basic"), options)).render()
 }
 if (jQuery("#apex-line-area").length) {
 	options = {

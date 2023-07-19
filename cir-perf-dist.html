@@ -37,6 +37,7 @@
 
 
 
+
          <!-- Sidebar  -->
          <div class="iq-sidebar">
             <div class="iq-navbar-logo d-flex justify-content-between">
@@ -55,7 +56,7 @@
                <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="iq-menu">
 
-                     <li class="active">
+                     <li>
                         <a href="#News" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pie-chart-box-line iq-arrow-left"></i><span>News Dashboard</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="News" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
 
@@ -67,7 +68,7 @@
                         </ul>
                      </li>
 
-                     <li>
+                     <li class="active">
                         <a href="#Circulation" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pie-chart-box-line iq-arrow-left"></i><span>Circulation Dashboard</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="Circulation" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
 
@@ -339,15 +340,23 @@
 
                
                <div class="row">
-                  <div class="form-group col-4">
+                  <div class="form-group col-3">
+                     <label>Default</label>
+                     <select class="form-control mb-3">
+                        <option value="1">Dhaka</option>
+                        <option value="2">Gazipur</option>
+                        <option value="3">Tangail</option>
+                     </select>
+                  </div>
+                  <div class="form-group col-3">
                      <label for="exampleInputdate">From Date:</label>
                      <input type="date" class="form-control" id="exampleInputdate" value="2023-01-18">
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-3">
                      <label for="exampleInputdate">To Date:</label>
                      <input type="date" class="form-control" id="exampleInputdate" value="2023-01-18">
                   </div>
-                  <div class="form-group  col-4">
+                  <div class="form-group  col-3">
                      <label for="exampleInputdate"></label><br>
                      <button type="submit" class="btn btn-primary float-lg-right mt-3" >Submit</button>
                   </div>
@@ -359,11 +368,11 @@
                     <div class="iq-card" style="width: 100%;">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Magemaker wise page count</h4>
+                              <h4 class="card-title">District Wise Performance</h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
-                           <div id="pagecount-chart" style="height: 500px;"></div>
+                           <div id="distperf-column"></div>
                         </div>
                      </div>
 
